@@ -19,7 +19,7 @@ const headersData = [
     href: '/',
   },
   {
-    label: 'About Me',
+    label: 'About',
     href: '/about',
   },
   {
@@ -27,26 +27,47 @@ const headersData = [
     href: '/project',
   },
   {
-    label: 'Resume',
-    href: '/resume',
+    label: 'Contact',
+    href: '/contact',
   },
 ];
 
 const useStyles = makeStyles(() => ({
+  root: {
+    backgroundColor: '#116466',
+  },
   header: {
-    backgroundColor: '#400CCC',
-    paddingRight: '79px',
-    paddingLeft: '118px',
-  '@media (max-width: 900px': {
-    paddingLeft: 0,
+    backgroundColor: "#313533",
+    paddingRight: "79px",
+    paddingLeft: "118px",
+    "@media (max-width: 900px)": {
+      paddingLeft: 0,
+    },
+  },
+  // logo: {
+  //   fontFamily: "Work Sans, sans-serif",
+  //   fontWeight: 600,
+  //   color: "#FFFEFE",
+  //   textAlign: "left",
+  // },
+  menuButton: {
+    fontFamily: "Open Sans, sans-serif",
+    fontWeight: 500,
+    fontSize: "30px",
+    marginLeft: "38px",
+  },
+  toolbar: {
+    display: "flex",
+    justifyContent: "space-between",
   },
   drawerContainer: {
-    padding: '20px 30px',
-  }
-}
+    padding: "20px 30px",
+  },
 }));
 
-export default function Nav() {
+export default function Nav({ currentPage, handlePageChange }) {
+  const { header, menuButton, toolbar, drawerContainer } = useStyles();
+
   const [state, setState] = useState({
     mobileView: false,
     drawerOpen: false
@@ -70,8 +91,9 @@ export default function Nav() {
   }, []);
 
   const displayDesktop = () => {
+    console.log();
     return (
-      <Toolbar>
+      <Toolbar className={toolbar}>
         {/* {CAT logo} */}
         Logo will go here
         <div>{getMenuButtons()}</div>
@@ -83,7 +105,7 @@ export default function Nav() {
     const handleDrawerOpen = () =>
       setState((prevState) => ({ ...prevState, drawerOpen: true }));
     const handleDrawerClose = () => 
-      setState((prevState) => ({ ...prevState, drawerOpen: false }));
+      setState((prevState) => ({ ...prevState, drawerOpen: false }));    
 
     return (
       <Toolbar>
@@ -93,7 +115,7 @@ export default function Nav() {
           color: 'inherit',
           'aria-label': 'menu',
           'aria-haspopup': 'true',
-          onClick: handleDrawerOpen,
+          onClick: handleDrawerOpen
         }}
         >
           <MenuIcon />
@@ -107,7 +129,7 @@ export default function Nav() {
             onClose: handleDrawerClose,
           }}
           >
-            <div>
+            <div className={drawerContainer}>
               For now it's just this
               {getDrawerChoices()}
             </div>
@@ -116,6 +138,12 @@ export default function Nav() {
       </Toolbar>
     );
   };
+
+  const displayPage = (label) => {
+    console.log("inside of display page function: ", headersData)
+    handlePageChange(label)
+  };
+
 
   const getDrawerChoices = () => {
     return headersData.map(({ label, href }) => {
@@ -127,6 +155,7 @@ export default function Nav() {
             color: 'inherit',
             style: { textDecoration: 'none' },
             key: label,
+            onClick: (event) => handlePageChange(event, label)
           }}
           >
             <MenuItem>{label}</MenuItem>
@@ -141,10 +170,12 @@ export default function Nav() {
         <Button
           {...{
             key: label,
+            value: label,
             color: 'inherit',
             to: href,
             component: RouterLink,
-            // className: menuButton,
+            className: menuButton,
+            onClick: (event) => handlePageChange(event, label)
           }}
         >
           {label}
@@ -155,9 +186,10 @@ export default function Nav() {
 
   return (
     <header>
-      <AppBar>
+      <AppBar className={header}>
         {mobileView ? displayMobile() : displayDesktop()}
       </AppBar>
     </header>
   );
 };
+
