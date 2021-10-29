@@ -1,21 +1,26 @@
-import { AppBar, Container, makeStyles } from "@material-ui/core";
+import { Container, makeStyles } from "@material-ui/core";
 import React from "react";
 import Link from "@mui/material/Link";
 import PhoneIcon from "@mui/icons-material/Phone";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
-import '../global.css';
+import useMediaQuery from "@mui/material/useMediaQuery";
+import "../global.css";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: "#313533",
     fontSize: "large",
     color: "white",
     fill: "white",
     padding: "20px",
-    marginTop: "24px",
-    borderRadius: '10px',
+    marginTop: "36px",
+    width: "100%",
+    position: "absolute",
+    [theme.breakpoints.down('sm')]: {
+      padding: "0px",
+    },
   },
   lowerLinks: {
     display: "flex",
@@ -31,14 +36,14 @@ const useStyles = makeStyles(() => ({
   footerCopyright: {
     fontSize: "24px",
     textAlign: "center",
-    paddingTop: "10px",
+    paddingTop: "15px",
   },
 }));
 
 export default function Footer() {
   const { footer, lowerLinks, footerButtons, footerCopyright } = useStyles();
   return (
-    <AppBar position="static" className={footer}>
+    <footer className={footer}>
       <Container>
         <div>
           <div className={lowerLinks}>
@@ -59,10 +64,10 @@ export default function Footer() {
             </Link>
           </div>
           <div className={footerCopyright}>
-            <div class="container">© 2021 Copyright Casey Twine</div>
+            <div>© 2021 Copyright Casey Twine</div>
           </div>
         </div>
       </Container>
-    </AppBar>
+    </footer>
   );
 }

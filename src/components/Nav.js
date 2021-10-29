@@ -50,18 +50,31 @@ const useStyles = makeStyles(() => ({
   //   color: "#FFFEFE",
   //   textAlign: "left",
   // },
+  menuIcon: {
+    fontFamily: "Open Sans, sans-serif",
+    fontWeight: 200,
+    marginLeft: "38px",
+    "&:hover": {
+      color: "#32e1e4",
+    },    
+  },
   menuButton: {
     fontFamily: "Open Sans, sans-serif",
     fontWeight: 500,
     fontSize: "30px",
     marginLeft: "38px",
+    "&:hover": {
+      color: "#32e1e4",
+    },
   },
   toolbar: {
     display: "flex",
     justifyContent: "space-between",
   },
   drawerContainer: {
-    padding: "20px 30px",
+    color: "#313533",
+    fontSize: "30px",
+    padding: "10px 20px",
   },
 }));
 
@@ -77,7 +90,7 @@ export default function Nav({ currentPage, handlePageChange }) {
 
   useEffect(() => {
     const setResponsiveness = () => {
-      return window.innerWidth < 900
+      return window.innerWidth < 1000
       ? setState((prevState) => ({ ...prevState, mobileView: true}))
       : setState((prevState) => ({ ...prevState, mobileView: false}));
     };
@@ -130,11 +143,10 @@ export default function Nav({ currentPage, handlePageChange }) {
           }}
           >
             <div className={drawerContainer}>
-              For now it's just this
               {getDrawerChoices()}
             </div>
           </Drawer>
-          <div>Insert Logo</div>
+          {/* <div>Insert Logo</div> */}
       </Toolbar>
     );
   };
@@ -146,7 +158,7 @@ export default function Nav({ currentPage, handlePageChange }) {
 
 
   const getDrawerChoices = () => {
-    return headersData.map(({ label, href }) => {
+    return headersData.map(({ label, href, menuIcon }) => {
       return (
         <Link
           {...{
@@ -155,6 +167,7 @@ export default function Nav({ currentPage, handlePageChange }) {
             color: 'inherit',
             style: { textDecoration: 'none' },
             key: label,
+            className: menuIcon,
             onClick: (event) => handlePageChange(event, label)
           }}
           >

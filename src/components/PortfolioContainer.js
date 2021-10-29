@@ -37,7 +37,6 @@ export default function PortfolioContainer() {
     <div className={contentStyles}>
       <Nav currentPage={displayedPage} handlePageChange={handlePageChange} />
       {renderPage()}
-      <Footer />
     </div>
   );
 }

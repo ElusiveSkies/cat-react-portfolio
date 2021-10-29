@@ -1,24 +1,29 @@
-import React from 'react';
+import Footer from "./components/Footer";
+import React from "react";
 
-import './global.css';
+import "./global.css";
 // import List from './components/List'
 // import Nav from './components/Nav';
-import PortfolioContainer from './components/PortfolioContainer';
-import { makeStyles } from '@material-ui/core';
+import PortfolioContainer from "./components/PortfolioContainer";
+import { makeStyles } from "@material-ui/core";
 
 const contentStyles = makeStyles(() => ({
   content: {
-    paddingTop: '100px',
-  }
-}))
+    paddingTop: "100px",
+    minHeight: "calc(100vh - 249px)",
+  },
+}));
 
 // import projects from './projects';
 
 export default function App() {
-    const { content } = contentStyles();
-    return (        
-        <div className={content}>
-            <PortfolioContainer />
-        </div>
-    );
-};
+  const { content } = contentStyles();
+  return (
+    <>
+      <div className={content}>
+        <PortfolioContainer />
+      </div>
+      <Footer />
+    </>
+  );
+}
