@@ -10,7 +10,7 @@ import { makeStyles } from "@material-ui/core";
 const contentStyles = makeStyles(() => ({
   content: {
     paddingTop: "100px",
-    minHeight: "calc(100vh - 249px)",
+    minHeight: "calc(100vh - 265px)",
   },
 }));
 

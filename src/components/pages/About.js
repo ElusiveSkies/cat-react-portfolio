@@ -1,26 +1,16 @@
 import React from "react";
-import { FormHelperText, makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import Grid from "@mui/material/Grid";
 import DownloadIcon from "@mui/icons-material/Download";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
-import Paper from "@mui/material/Paper";
-import { styled } from "@mui/material/styles";
 
 import "../../global.css";
-
-// const Item = styled(Paper)(({ theme }) => ({
-//   ...theme.typography.body2,
-//   padding: theme.spacing(1),
-//   textAlign: "center",
-//   color: theme.palette.text.secondary,
-// }));
 
 const aboutStyles = makeStyles((theme) => ({
   mainGrid: {
     display: "flex",
     justifyContent: "center",
-    minHeight: "100vh",
     width: "100%",
   },
   about: {
@@ -29,7 +19,6 @@ const aboutStyles = makeStyles((theme) => ({
     borderWidth: "1px",
     borderColor: "#2c3531",
     borderRadius: "20px",
-    minHeight: "82vh",
     backgroundColor: "#313533",
     color: "white",
     textAlign: "center",
@@ -97,7 +86,7 @@ export default function About() {
               <div xs className={content}>
                 <img
                   className={picMe}
-                  alt="Picture of me"
+                  alt="Me"
                   src="https://avatars.githubusercontent.com/u/83562370?v=4"
                 />
               </div>
@@ -131,5 +120,3 @@ export default function About() {
     </Grid>
   );
 }
-
-//

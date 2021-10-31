@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "large",
     color: "white",
     fill: "white",
-    padding: "20px",
+    padding: "20px 0px",
     marginTop: "36px",
     width: "100%",
     position: "absolute",
