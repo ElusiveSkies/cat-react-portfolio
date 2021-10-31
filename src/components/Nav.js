@@ -9,15 +9,12 @@ import {
   Link,
   MenuItem,
 } from '@material-ui/core';
-import React, { useState, useEffect } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link as RouterLink } from 'react-router-dom';
+import resumePDF from '../assets/resume/CAT-resume-cut-Aug2021.pdf';
 
 const headersData = [
-  {
-    label: 'Home',
-    href: '/',
-  },
   {
     label: 'About',
     href: '/about',
@@ -30,6 +27,10 @@ const headersData = [
     label: 'Contact',
     href: '/contact',
   },
+  {
+    label: 'Resume',
+    href: '/resume',
+  }
 ];
 
 const useStyles = makeStyles(() => ({

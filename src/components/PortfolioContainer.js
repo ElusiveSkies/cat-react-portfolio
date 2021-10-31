@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Nav from './Nav';
-import Footer from './Footer';
-import Home from './pages/Home';
 import About from './pages/About';
 import Project from './pages/Project';
 import Contact from './pages/Contact';
 import { makeStyles } from '@material-ui/core';
+import resumePDF from '../assets/resume/CAT-resume-cut-Aug2021.pdf';
 
 const contentStyles = makeStyles(() => ({
   content: {
@@ -17,16 +16,16 @@ export default function PortfolioContainer() {
   const [displayedPage, setPage] = useState('Home');
 
   const renderPage = () => {
-    if (displayedPage === 'Home') {
-      return <Home />;
-    }
-    if (displayedPage === 'About') {
-      return <About />;
-    }
-    if (displayedPage === 'Projects') {
+    if (displayedPage === 'Project') {
       return <Project />;
     }
-    return <Contact />;
+    if (displayedPage === 'Contact') {
+      return <Contact />;
+    }
+    if (displayedPage === 'Resume') {
+      return window.open(resumePDF, '_blank');
+    }
+    return <About />;
   };
 
   console.log();

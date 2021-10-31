@@ -1,7 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
 import Grid from "@mui/material/Grid";
-import DownloadIcon from "@mui/icons-material/Download";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 
@@ -37,7 +36,7 @@ const aboutStyles = makeStyles((theme) => ({
   content: {
     backgroundColor: "#313533",
     color: "white",
-    padding: "0px",
+    padding: "0px 0px 50px 0px",
     fontSize: "115%",
     borderWidth: "0px",
   },
@@ -70,8 +69,8 @@ export default function About() {
     content,
     contentHeading,
     gridContent,
-    resume,
-    downloadButton,
+    // resume,
+    // downloadButton,
     picMe,
   } = aboutStyles();
   return (
@@ -105,15 +104,6 @@ export default function About() {
                 reading.
               </p>
             </Grid>
-            <div className={resume}>
-              Resume:
-              <Link
-                href="assets/resume/CAT-resume-cut-Aug2021.pdf"
-                target="_blank"
-              >
-                <DownloadIcon fontSize="36px" className={downloadButton} />
-              </Link>
-            </div>
           </Grid>
         </Box>
       </div>
