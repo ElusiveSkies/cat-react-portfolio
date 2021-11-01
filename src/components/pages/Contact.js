@@ -1,22 +1,57 @@
-import React from 'react';
+import React from "react";
+import { makeStyles } from "@material-ui/core";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Form from "./Form";
+
+import "../../global.css";
+
+const aboutStyles = makeStyles((theme) => ({
+  mainGrid: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    borderWidth: "1px",
+    borderColor: "#2c3531",
+    borderRadius: "20px",
+    minHeight: "72vh",
+    backgroundColor: "#313533",
+    color: "white",
+    textAlign: "center",
+    justifyContent: "center",
+    minWidth: "75%",
+  },
+  gridContent: {
+    padding: "20px",
+    fontSize: "200%",
+    display: "flex",
+    flexWrap: "wrap",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignContent: "center",
+    width: "100%",
+    [theme.breakpoints.down("sm")]: {
+      padding: "20px 10px",
+    },
+  },
+}));
 
 export default function Contact() {
+  const { mainGrid, container, content, gridContent } = aboutStyles();
   return (
-    <div>
-      <h1>Contact Page</h1>
-      <p>
-        Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis
-        molestie urna. Aliquam semper ultrices varius. Aliquam faucibus sit amet
-        magna a ultrices. Aenean pellentesque placerat lacus imperdiet
-        efficitur. In felis nisl, luctus non ante euismod, tincidunt bibendum
-        mi. In a molestie nisl, eu sodales diam. Nam tincidunt lacus quis magna
-        posuere, eget tristique dui dapibus. Maecenas fermentum elementum
-        faucibus. Quisque nec metus vestibulum, egestas massa eu, sollicitudin
-        ipsum. Nulla facilisi. Sed ut erat ligula. Nam tincidunt nunc in nibh
-        dictum ullamcorper. Class aptent taciti sociosqu ad litora torquent per
-        conubia nostra, per inceptos himenaeos. Etiam ornare rutrum felis at
-        rhoncus. Etiam vel condimentum magna, quis tempor nulla.
-      </p>
-    </div>
+    <Grid className={mainGrid}>
+      <div sm={12} className={container}>
+        <Box>
+          <Grid container xs={12} className={gridContent}>
+            <div xs className={content}>
+              <Form />
+            </div>
+          </Grid>
+        </Box>
+      </div>
+    </Grid>
   );
 }

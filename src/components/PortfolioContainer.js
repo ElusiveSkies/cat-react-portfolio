@@ -13,7 +13,7 @@ const contentStyles = makeStyles(() => ({
 }))
 
 export default function PortfolioContainer() {
-  const [displayedPage, setPage] = useState('Home');
+  const [displayedPage, setPage] = useState('About');
 
   const renderPage = () => {
     if (displayedPage === 'Project') {
@@ -23,14 +23,13 @@ export default function PortfolioContainer() {
       return <Contact />;
     }
     if (displayedPage === 'Resume') {
-      return window.open(resumePDF, '_blank');
+      return window.open(resumePDF, '_blank') && <About />;
     }
     return <About />;
   };
 
-  console.log();
 
-  const handlePageChange = (event, page) =>{ console.log("inside set page event: ", event);  console.log("inside set page func: ", page); setPage(page)};
+  const handlePageChange = (event, page) =>{setPage(page)};
 
   return (
     <div className={contentStyles}>

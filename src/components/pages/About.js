@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles } from "@material-ui/core";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import Link from "@mui/material/Link";
 
 import "../../global.css";
 
@@ -69,8 +68,6 @@ export default function About() {
     content,
     contentHeading,
     gridContent,
-    // resume,
-    // downloadButton,
     picMe,
   } = aboutStyles();
   return (

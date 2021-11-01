@@ -8,7 +8,6 @@ body {
     margin: 0px;
 }
 
-
 .MuiMenuItem-root {
     font-size: 24px !important;
     color: white !important;
@@ -22,3 +21,7 @@ body {
     background-color: #313533 !important;
 }
 
+.form-input p {
+    color: red;
+    font-size: 20px;
+}

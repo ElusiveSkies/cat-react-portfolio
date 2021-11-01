@@ -1,7 +1,6 @@
 import {
   AppBar,
   Toolbar,
-  // Typography,
   makeStyles,
   Button,
   IconButton,
@@ -9,10 +8,9 @@ import {
   Link,
   MenuItem,
 } from '@material-ui/core';
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link as RouterLink } from 'react-router-dom';
-import resumePDF from '../assets/resume/CAT-resume-cut-Aug2021.pdf';
 
 const headersData = [
   {
@@ -150,11 +148,6 @@ export default function Nav({ currentPage, handlePageChange }) {
           {/* <div>Insert Logo</div> */}
       </Toolbar>
     );
-  };
-
-  const displayPage = (label) => {
-    console.log("inside of display page function: ", headersData)
-    handlePageChange(label)
   };
 
 
