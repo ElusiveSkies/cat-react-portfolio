@@ -5,6 +5,7 @@ import Project from './pages/Project';
 import Contact from './pages/Contact';
 import { makeStyles } from '@material-ui/core';
 import resumePDF from '../assets/resume/CAT-resume-cut-Aug2021.pdf';
+import projects from './pages/projects';
 
 const contentStyles = makeStyles(() => ({
   content: {
@@ -13,11 +14,11 @@ const contentStyles = makeStyles(() => ({
 }))
 
 export default function PortfolioContainer() {
-  const [displayedPage, setPage] = useState('About');
+  const [displayedPage, setPage] = useState('Project');
 
   const renderPage = () => {
     if (displayedPage === 'Project') {
-      return <Project />;
+      return <Project projects={projects} />;
     }
     if (displayedPage === 'Contact') {
       return <Contact />;

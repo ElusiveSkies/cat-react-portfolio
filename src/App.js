@@ -14,8 +14,6 @@ const contentStyles = makeStyles(() => ({
   },
 }));
 
-// import projects from './projects';
-
 export default function App() {
   const { content } = contentStyles();
   return (

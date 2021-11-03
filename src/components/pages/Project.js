@@ -1,24 +1,74 @@
 import React from 'react';
+import { makeStyles } from "@material-ui/core";
+import Link from '@mui/material/Link'
+import Grid from "@mui/material/Grid";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import HoverImage from "react-hover-image";
 
-export default function Project() {
+import "../../global.css";
+import { render } from 'react-dom';
+
+const aboutStyles = makeStyles((theme) => ({
+  mainGrid: {
+    display: "flex",
+    justifyContent: "center",
+    width: "100%",
+  },
+  about: {
+    display: "flex",
+    flexDirection: "column",
+    borderWidth: "1px",
+    borderColor: "#2c3531",
+    borderRadius: "20px",
+    backgroundColor: "#313533",
+    color: "white",
+    textAlign: "center",
+    justifyContent: "center",
+    maxWidth: "75%",
+  },
+}));
+
+export default function Project({ projects }) {
+  const { mainGrid, about } = aboutStyles();
   return (
-    <div>
-      <h1>Projects Page</h1>
-      <p>
-        Donec a volutpat quam. Curabitur nec varius justo, sed rutrum ligula.
-        Curabitur pellentesque turpis sit amet eros iaculis, a mollis arcu
-        dictum. Ut vel ante eget massa ornare placerat. Etiam nisl orci, finibus
-        sodales volutpat et, hendrerit ut dolor. Suspendisse porta dictum nunc,
-        sed pretium risus rutrum eget. Nam consequat, ligula in faucibus
-        vestibulum, nisi justo laoreet risus, luctus luctus mi lacus sit amet
-        libero. Class aptent taciti sociosqu ad litora torquent per conubia
-        nostra, per inceptos himenaeos. Mauris pretium condimentum tellus eget
-        lobortis. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-        Donec placerat accumsan mi, ut congue neque placerat eu. Donec nec ipsum
-        in velit pellentesque vehicula sit amet at augue. Maecenas aliquam
-        bibendum congue. Pellentesque semper, lectus non ullamcorper iaculis,
-        est ligula suscipit velit, sed bibendum turpis dui in sapien.
-      </p>
-    </div>
-  );
-}
+    <Grid className={mainGrid}>
+      <div sm={12} className={about}>
+        <h1>Projects</h1>
+        {projects.map((project) => (
+          <section className="project" key={project.id}>
+            <header className="card">{project.title}</header>
+            <p>
+              {project.description}
+                    <ul>Framework: {project.tools.framework}</ul>
+              <ul>Development: {project.tools.development}</ul>
+            </p>
+            <HoverImage id={project.title} src={project.img.static} hoverSrc={project.img.animated} width="100%" />
+            <div className="links">
+              {projects.forEach((project) => {
+                if (project.link.deploy) {
+                  return (
+                    <div>
+                      <Link
+                        className="externalLink"
+                        href={`${project.link.deploy}`}
+                        target="_blank"
+                      >
+                        View
+                      </Link>
+                    </div>
+                  );
+                }
+              })}
+              <div>
+                <Link href={project.link.repository} target="_blank">
+                  <GitHubIcon fontSize="32px" />
+                </Link>
+              </div>
+            </div>
+          </section>
+        )
+        )}
+      </div>
+    </Grid>
+  )
+};
