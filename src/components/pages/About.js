@@ -21,7 +21,10 @@ const aboutStyles = makeStyles((theme) => ({
     color: "white",
     textAlign: "center",
     justifyContent: "center",
-    maxWidth: "75%",
+    maxWidth: "80%",
+    "@media (max-width: 900px)": {
+      maxWidth: '95%',
+    },
   },
   gridContent: {
     padding: "20px",
@@ -54,11 +57,11 @@ const aboutStyles = makeStyles((theme) => ({
     fontSize: "36px",
   },
   picMe: {
-  [theme.breakpoints.down('sm')]: {
-    width: "200px",
-    height: "200px",
+    [theme.breakpoints.down('sm')]: {
+      width: "200px",
+      height: "200px",
+    },
   },
-},
 }));
 
 export default function About() {
@@ -89,13 +92,13 @@ export default function About() {
             </Grid>
             <Grid xs={12} md={5} className={content}>
               <p item xs className={content}>
-                I have always found technology and, by association, coding
-                exciting. After more than ten years working in various
-                pharmaceutical laboratories as an analytical chemist, I'm hoping
-                to turn an old hobby into a career. This led to my enrollment in
-                the UNC Chapel Hill Coding Bootcamp where I've becoming familiar
-                with HTML, CSS, Javascript, Git, and Node I'm interested in
-                seeing where these new skills will take me.
+                I am an enthusiastic web developer who has always found technology
+                and, by association, coding exciting. After more than ten years
+                working in various pharmaceutical laboratories as an analytical chemist, I'm
+                hoping to turn an old hobby into a career. This led to my
+                enrollment in the UNC Chapel Hill Coding Bootcamp where I've
+                becoming familiar with HTML, CSS, Javascript, Git, Node, and MySQL.
+                I'm interested in seeing where these new skills will take me.
                 <br />
                 In my free time I enjoy lifting, hanging out with my family, and
                 reading.

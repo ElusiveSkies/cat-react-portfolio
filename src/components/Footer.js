@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     position: "absolute",
     [theme.breakpoints.down('sm')]: {
-      padding: "0px",
+      paddingTop: "10px",
     },
   },
   lowerLinks: {

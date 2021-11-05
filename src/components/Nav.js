@@ -11,6 +11,7 @@ import {
 import React, { useState, useEffect } from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link as RouterLink } from 'react-router-dom';
+// import logo from './logo/cat-logo.png'
 
 const headersData = [
   {
@@ -18,7 +19,7 @@ const headersData = [
     href: '/about',
   },
   {
-    label: 'Projects',
+    label: 'Project',
     href: '/project',
   },
   {
@@ -43,19 +44,18 @@ const useStyles = makeStyles(() => ({
       paddingLeft: 0,
     },
   },
-  // logo: {
-  //   fontFamily: "Work Sans, sans-serif",
-  //   fontWeight: 600,
-  //   color: "#FFFEFE",
-  //   textAlign: "left",
-  // },
+  logo: {
+    width: '150px',
+    height: '67px',
+    textAlign: "left",
+  },
   menuIcon: {
     fontFamily: "Open Sans, sans-serif",
     fontWeight: 200,
     marginLeft: "38px",
     "&:hover": {
       color: "#32e1e4",
-    },    
+    },
   },
   menuButton: {
     fontFamily: "Open Sans, sans-serif",
@@ -90,8 +90,8 @@ export default function Nav({ currentPage, handlePageChange }) {
   useEffect(() => {
     const setResponsiveness = () => {
       return window.innerWidth < 1000
-      ? setState((prevState) => ({ ...prevState, mobileView: true}))
-      : setState((prevState) => ({ ...prevState, mobileView: false}));
+        ? setState((prevState) => ({ ...prevState, mobileView: true }))
+        : setState((prevState) => ({ ...prevState, mobileView: false }));
     };
 
     setResponsiveness();
@@ -106,8 +106,7 @@ export default function Nav({ currentPage, handlePageChange }) {
     console.log();
     return (
       <Toolbar className={toolbar}>
-        {/* {CAT logo} */}
-        Logo will go here
+        <img src='./images/cat-logo.png' alt='logo image' width='150px' height='67px' />
         <div>{getMenuButtons()}</div>
       </Toolbar>
     );
@@ -116,23 +115,22 @@ export default function Nav({ currentPage, handlePageChange }) {
   const displayMobile = () => {
     const handleDrawerOpen = () =>
       setState((prevState) => ({ ...prevState, drawerOpen: true }));
-    const handleDrawerClose = () => 
-      setState((prevState) => ({ ...prevState, drawerOpen: false }));    
+    const handleDrawerClose = () =>
+      setState((prevState) => ({ ...prevState, drawerOpen: false }));
 
     return (
       <Toolbar>
         <IconButton
-        {...{
-          edge: 'start',
-          color: 'inherit',
-          'aria-label': 'menu',
-          'aria-haspopup': 'true',
-          onClick: handleDrawerOpen
-        }}
+          {...{
+            edge: 'start',
+            color: 'inherit',
+            'aria-label': 'menu',
+            'aria-haspopup': 'true',
+            onClick: handleDrawerOpen
+          }}
         >
           <MenuIcon />
         </IconButton>
-        <div>If you like Pinacoladas</div>
 
         <Drawer
           {...{
@@ -140,12 +138,12 @@ export default function Nav({ currentPage, handlePageChange }) {
             open: drawerOpen,
             onClose: handleDrawerClose,
           }}
-          >
-            <div className={drawerContainer}>
-              {getDrawerChoices()}
-            </div>
-          </Drawer>
-          {/* <div>Insert Logo</div> */}
+        >
+          <div className={drawerContainer}>
+            {getDrawerChoices()}
+          </div>
+        </Drawer>
+        <img src='./images/cat-logo.png' alt='logo image' width='112px' height='50px' />
       </Toolbar>
     );
   };
@@ -164,9 +162,9 @@ export default function Nav({ currentPage, handlePageChange }) {
             className: menuIcon,
             onClick: (event) => handlePageChange(event, label)
           }}
-          >
-            <MenuItem>{label}</MenuItem>
-          </Link>
+        >
+          <MenuItem>{label}</MenuItem>
+        </Link>
       )
     })
   }

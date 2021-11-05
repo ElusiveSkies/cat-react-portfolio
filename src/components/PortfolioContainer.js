@@ -26,7 +26,9 @@ export default function PortfolioContainer() {
     if (displayedPage === 'Resume') {
       return window.open(resumePDF, '_blank') && <About />;
     }
+    if (displayedPage === 'About') {
     return <About />;
+    }
   };
 
 
