@@ -73,7 +73,6 @@ const projects = [
             development: 'Javascript, MySQL2, Inquirer',
         },
         link: {
-            deploy: 'https://elusiveskies.github.io/employee_tracker/',
             repository: 'https://github.com/elusiveskies/employee_tracker/'
         },
         img: {
@@ -93,8 +92,8 @@ const projects = [
             repository: 'https://github.com/ElusiveSkies/Farmers-Market-Search'
         },
         img: {
-            static: './images/emp_tracker.png',
-            animated: './images/emp_tracker-active.gif',
+            static: './images/farmers_market.png',
+            animated: './images/farmers_market-active.gif',
         }
     },
 
