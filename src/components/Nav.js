@@ -136,7 +136,7 @@ export default function Nav({ currentPage, handlePageChange }) {
           {...{
             anchor: 'left',
             open: drawerOpen,
-            onClose: handleDrawerClose,
+            onClick: handleDrawerClose,
           }}
         >
           <div className={drawerContainer}>
