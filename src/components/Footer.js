@@ -5,6 +5,8 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
+import InstagramIcon from '@mui/icons-material/Instagram';
+
 import "../global.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -49,7 +51,7 @@ export default function Footer() {
             <Link href="https://github.com/ElusiveSkies" target="_blank">
               <GitHubIcon fontSize="42px" className={footerButtons} />
             </Link>
-            <Link href="tel:‪9106238447" target="_blank">
+            <Link href="tel:9106238447" target="_blank">
               <PhoneIcon fontSize="42px" className={footerButtons} />
             </Link>
             <Link href="mailto: elusiveskies@gmail.com" target="_blank">
@@ -60,6 +62,9 @@ export default function Footer() {
               target="_blank"
             >
               <LinkedInIcon fontSize="42px" className={footerButtons} />
+            </Link>
+            <Link href="https://instagram.com/caseytwine?utm_medium=copy_link" target="_blank">
+              <InstagramIcon fontSize="42px" className={footerButtons} />
             </Link>
           </div>
           <div className={footerCopyright}>

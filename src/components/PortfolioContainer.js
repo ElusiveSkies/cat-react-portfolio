@@ -14,7 +14,7 @@ const contentStyles = makeStyles(() => ({
 }))
 
 export default function PortfolioContainer() {
-  const [displayedPage, setPage] = useState('Project');
+  const [displayedPage, setPage] = useState('About');
 
   const renderPage = () => {
     if (displayedPage === 'Project') {
