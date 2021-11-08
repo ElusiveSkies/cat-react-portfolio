@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/cat-react-portfolio/static/css/main.2d0d47c3.chunk.css",
+    "main.js": "/cat-react-portfolio/static/js/main.1341e641.chunk.js",
+    "main.js.map": "/cat-react-portfolio/static/js/main.1341e641.chunk.js.map",
+    "runtime-main.js": "/cat-react-portfolio/static/js/runtime-main.35c1fe57.js",
+    "runtime-main.js.map": "/cat-react-portfolio/static/js/runtime-main.35c1fe57.js.map",
+    "static/js/2.4a08e635.chunk.js": "/cat-react-portfolio/static/js/2.4a08e635.chunk.js",
+    "static/js/2.4a08e635.chunk.js.map": "/cat-react-portfolio/static/js/2.4a08e635.chunk.js.map",
+    "index.html": "/cat-react-portfolio/index.html",
+    "static/css/main.2d0d47c3.chunk.css.map": "/cat-react-portfolio/static/css/main.2d0d47c3.chunk.css.map",
+    "static/js/2.4a08e635.chunk.js.LICENSE.txt": "/cat-react-portfolio/static/js/2.4a08e635.chunk.js.LICENSE.txt",
+    "static/media/CAT-resume-cut-Aug2021.99f62b84.pdf": "/cat-react-portfolio/static/media/CAT-resume-cut-Aug2021.99f62b84.pdf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.35c1fe57.js",
+    "static/js/2.4a08e635.chunk.js",
+    "static/css/main.2d0d47c3.chunk.css",
+    "static/js/main.1341e641.chunk.js"
+  ]
+}
